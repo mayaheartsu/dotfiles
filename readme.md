@@ -7,7 +7,7 @@ https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83
 
 https://github.com/ChrisTitusTech/ArchTitus/
 
-my entire hyprland setup is based 1amSimp1e's work and credit is v much due for that.
+my entire hyprland setup is based on 1amSimp1e's work and credit is v much due for that.
 
 ^^ please refer to their readme for detailed installation instructions & font downloads. ^^
 
@@ -33,3 +33,8 @@ cd dotfiles
 chmod +x install.sh
 ./install.sh
 ```
+
+## todo:
+continue to improve formatting of readme
+figure out why the fuck hyprland with nvidia-open-dkms is so dogshit (flickering, stuttering videos. stuttering xwayland applications, whole screen flashing black briefly at random invervals)
+forgive myself for submitting so many awful commits
