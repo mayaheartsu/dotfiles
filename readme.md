@@ -25,5 +25,6 @@ cp -r ./config/* ~/.config/
 run the extremely basic-ass install script to acquire the appropriate packages
 ```
 cd dotfiles
+chmod +x install.sh
 ./install.sh
 ```
