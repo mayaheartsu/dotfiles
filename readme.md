@@ -21,7 +21,7 @@ cd dotfiles
 cp -r ./config/* ~/.config/
 ```
 
-## run install needed packages
+## install needed packages
 run the extremely basic-ass install script to acquire the appropriate packages
 ```
 cd dotfiles
