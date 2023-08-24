@@ -2,7 +2,7 @@
     <h1>mayadots 😼</h1>
 </div>
 
-## shoutouts to: 
+## shoutouts to
 https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 
 
 https://github.com/ChrisTitusTech/ArchTitus/
@@ -34,7 +34,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-## todo:
+## todo
 continue to improve formatting of readme
 
 figure out why the fuck hyprland with nvidia-open-dkms is so dogshit (flickering, stuttering videos. stuttering xwayland applications, whole screen flashing black briefly at random invervals)
