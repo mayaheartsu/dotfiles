@@ -2,11 +2,13 @@
     <h1>mayadots 😼</h1>
 </div>
 
-## shoutouts to https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 
+## shoutouts to https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 & https://github.com/ChrisTitusTech/ArchTitus/
 
-my entire setup is based off their work, and credit is v much due for that.
+my entire hyprland setup is based 1amSimp1e's work and credit is v much due for that.
 
-please refer to their readme for detailed installation instructions & font downloads.
+^^ please refer to their readme for detailed installation instructions & font downloads. ^^
+
+credit also due to ChrisTitusTech's ArchTitus script, which i borrowed some code from in order to make my install.sh actually useful.
 
 
 <div align="center">
