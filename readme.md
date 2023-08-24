@@ -2,7 +2,9 @@
     <h1>mayadots 😼</h1>
 </div>
 
-## shoutouts to https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 & https://github.com/ChrisTitusTech/ArchTitus/
+## shoutouts to: 
+https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 
+https://github.com/ChrisTitusTech/ArchTitus/
 
 my entire hyprland setup is based 1amSimp1e's work and credit is v much due for that.
 
