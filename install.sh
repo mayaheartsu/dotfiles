@@ -36,7 +36,7 @@ echo -ne "
                     package installation
 -------------------------------------------------------------------------
 "
-yay -S afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git kitty libnotify light lightly-qt man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger rate-mirrors-bin rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar webcord-bin wf-recorder wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
+yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git kitty libnotify light lightly-qt man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger rate-mirrors-bin rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar webcord-bin wf-recorder wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -61,7 +61,7 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 sudo systemctl enable sddm.service
-echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo cat >> /etc/environment
+#echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo cat >> /etc/environment
 
 echo -ne "
 -------------------------------------------------------------------------

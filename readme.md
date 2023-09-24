@@ -23,7 +23,7 @@ credit also due to ChrisTitusTech's ArchTitus script, which i borrowed some code
 ```
 git clone https://github.com/mayaheartsu/dotfiles
 cd dotfiles
-cp -r ./config/* ~/.config/
+cp -r ./.config/* ~/.config/
 ```
 
 ## install needed packages
