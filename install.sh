@@ -65,6 +65,23 @@ sudo systemctl enable sddm.service
 
 echo -ne "
 -------------------------------------------------------------------------
+                    fetch & install fonts
+-------------------------------------------------------------------------
+"
+
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Iosevka.zip
+curl https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+curl https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
+mkdir ~/.local/share/fonts
+unzip ~/Downloads/JetBrainsMono.zip -d ~/.local/share/fonts
+unzip ~/Downloads/Iosevka.zip -d ~/.local/share/fonts
+mv  ~/Downloads/NotoColorEmoji.ttf ~/.local/share/fonts
+mv  ~/Downloads/codicon.ttf ~/.local/share/fonts
+fc-cache -fv
+
+echo -ne "
+-------------------------------------------------------------------------
                     DONE >:3
 -------------------------------------------------------------------------
 "

@@ -2,6 +2,12 @@
     <h1>mayadots 😼</h1>
 </div>
 
+<div align="center">
+
+![](urlgoeshere)
+
+</div>
+
 ## shoutouts to
 https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 
 
@@ -23,7 +29,7 @@ credit also due to ChrisTitusTech's ArchTitus script, which i borrowed some code
 ```
 git clone https://github.com/mayaheartsu/dotfiles
 cd dotfiles
-cp -r ./.config/* ~/.config/
+cp -r ~/dotfiles/.config/* ~/.config/
 ```
 
 ## install needed packages
