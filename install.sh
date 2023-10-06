@@ -69,10 +69,10 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Iosevka.zip
-curl https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
-curl https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip -P ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Iosevka.zip -P ~/Downloads
+wget https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf -P ~/Downloads
+wget https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf -P ~/Downloads
 mkdir ~/.local/share/fonts
 unzip ~/Downloads/JetBrainsMono.zip -d ~/.local/share/fonts
 unzip ~/Downloads/Iosevka.zip -d ~/.local/share/fonts
