@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![](urlgoeshere)
+![](https://raw.githubusercontent.com/mayaheartsu/dotfiles/main/screenshots/screenshots.png)
 
 </div>
 
