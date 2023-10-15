@@ -6,13 +6,15 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
+
 echo -ne "
 -------------------------------------------------------------------------
-                    rate-mirrors installation & mirror sort
+                    reflector installation & mirror sort
 -------------------------------------------------------------------------
 "
-yay -S --noconfirm rate-mirrors-bin
-sudo rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist
+yay -S --noconfirm reflector
+sudo reflector --country 'United States' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -31,12 +33,14 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
     proc_ucode=amd-ucode.img
 fi
 
+
 echo -ne "
 -------------------------------------------------------------------------
                     package installation
 -------------------------------------------------------------------------
 "
-yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git keepassxc kitty libnotify light lightly-qt man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger rate-mirrors-bin rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
+yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git keepassxc kitty libnotify light lightly-qt man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
+
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -55,13 +59,17 @@ elif grep -E "Intel Corporation UHD" <<< ${gpu_type}; then
    sudo pacman -S --needed --noconfirm libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils lib32-mesa
 fi
 
+
 echo -ne "
 -------------------------------------------------------------------------
-                    enable sddm & set QT_QPA_PLATFORMTHEME
+                    enable services
 -------------------------------------------------------------------------
 "
 sudo systemctl enable sddm.service
-#echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo cat >> /etc/environment
+sudo systecml enable nvidia-suspend.service
+sudo systecml enable nvidia-hibernate.service 
+sudo systecml enable nvidia-resume.service
+
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -81,6 +89,15 @@ unzip ~/Downloads/Iosevka.zip -d ~/.local/share/fonts
 mv  ~/Downloads/NotoColorEmoji.ttf ~/.local/share/fonts
 mv  ~/Downloads/codicon.ttf ~/.local/share/fonts
 fc-cache -fv
+
+
+echo -ne "
+-------------------------------------------------------------------------
+                    copy config files
+-------------------------------------------------------------------------
+"
+cp ~/dotfiles/.config/* ~/.config
+
 
 echo -ne "
 -------------------------------------------------------------------------
