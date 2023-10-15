@@ -66,9 +66,9 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 sudo systemctl enable sddm.service
-sudo systecml enable nvidia-suspend.service
-sudo systecml enable nvidia-hibernate.service 
-sudo systecml enable nvidia-resume.service
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service 
+sudo systemctl enable nvidia-resume.service
 
 
 echo -ne "
