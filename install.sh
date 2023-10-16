@@ -1,37 +1,48 @@
 #!/bin/sh
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     mayadots installer 
 -------------------------------------------------------------------------
+this script is intended for personal use. no promises things will work. >:3
 "
+sleep 5
 
-
+clear
 echo -ne "
 -------------------------------------------------------------------------
-                    install yay
+                     yay
 -------------------------------------------------------------------------
 "
+sleep 3
+
 git clone https://aur.archlinux.org/yay-bin /tmp/yay
 pushd /tmp/yay/
 makepkg -si --needed PKGBUILD
 popd
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
-                    reflector installation & mirror sort
+                    reflector + mirror sort
 -------------------------------------------------------------------------
 "
+sleep 3
+
 yay -S --noconfirm reflector
 sudo reflector --country 'United States' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     cpu microcode
 -------------------------------------------------------------------------
 "
+sleep 3
+
 # determine processor type and install microcode
 proc_type=$(lscpu)
 if grep -E "GenuineIntel" <<< ${proc_type}; then
@@ -45,19 +56,25 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
-                    package installation
+                    packages
 -------------------------------------------------------------------------
 "
+sleep 3
+
 yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git keepassxc kitty libnotify light lightly-qt linux-headers man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     graphics drivers
 -------------------------------------------------------------------------
 "
+sleep 3
+
 # Graphics Drivers find and install
 gpu_type=$(lspci)
 if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
@@ -71,22 +88,27 @@ elif grep -E "Intel Corporation UHD" <<< ${gpu_type}; then
 fi
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     enable services
 -------------------------------------------------------------------------
 "
+sleep 3
+
 sudo systemctl enable sddm.service
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service 
 sudo systemctl enable nvidia-resume.service
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     fetch & install fonts
 -------------------------------------------------------------------------
 "
+sleep 3
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip -P ~/Downloads
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Iosevka.zip -P ~/Downloads
@@ -102,19 +124,23 @@ mv  ~/Downloads/codicon.ttf ~/.local/share/fonts
 fc-cache -fv
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     copy config files
 -------------------------------------------------------------------------
 "
+sleep 3
+
 cp -r ~/dotfiles/.config/* ~/.config
 
 
+clear
 echo -ne "
 -------------------------------------------------------------------------
                     DONE >:3
 -------------------------------------------------------------------------
-"
+"sleep 3
 
 #optional game related packages
 #lutris steam gamemode gamescope goverlay mangohud protonup-qt prismlauncher-bin
