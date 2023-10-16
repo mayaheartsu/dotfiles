@@ -14,7 +14,7 @@ echo -ne "
 "
 git clone https://aur.archlinux.org/yay-bin /tmp/yay
 pushd /tmp/yay/
-sudo makepkg -si --needed PKGBUILD
+makepkg -si --needed PKGBUILD
 popd
 
 
