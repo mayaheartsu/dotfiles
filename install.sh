@@ -15,7 +15,7 @@ echo -ne "
                      yay
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 git clone https://aur.archlinux.org/yay-bin /tmp/yay
 pushd /tmp/yay/
@@ -29,7 +29,7 @@ echo -ne "
                     reflector + mirror sort
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 yay -S --noconfirm reflector
 sudo reflector --country 'United States' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
@@ -41,7 +41,7 @@ echo -ne "
                     cpu microcode
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 # determine processor type and install microcode
 proc_type=$(lscpu)
@@ -62,9 +62,9 @@ echo -ne "
                     packages
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
-yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland-git keepassxc kitty libnotify light lightly-qt linux-headers man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
+yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst file-roller firefox geeqie git gparted grim guvcview hyprland keepassxc kitty libnotify light lightly-qt linux-headers man-db mpv nano nemo nemo-fileroller neofetch nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji sddm-catppuccin-git sddm-config-editor-git sddm-git slurp swappy swaybg swayidle swaylock-effects-git timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed
 
 
 clear
@@ -73,7 +73,7 @@ echo -ne "
                     graphics drivers
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 # Graphics Drivers find and install
 gpu_type=$(lspci)
@@ -94,7 +94,7 @@ echo -ne "
                     enable services
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 sudo systemctl enable sddm.service
 sudo systemctl enable nvidia-suspend.service
@@ -108,7 +108,7 @@ echo -ne "
                     fetch & install fonts
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip -P ~/Downloads
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Iosevka.zip -P ~/Downloads
@@ -130,7 +130,7 @@ echo -ne "
                     copy config files
 -------------------------------------------------------------------------
 "
-sleep 3
+sleep 5
 
 cp -r ~/dotfiles/.config/* ~/.config
 
@@ -140,7 +140,8 @@ echo -ne "
 -------------------------------------------------------------------------
                     DONE >:3
 -------------------------------------------------------------------------
-"sleep 3
+"
+sleep 5
 
 #optional game related packages
 #lutris steam gamemode gamescope goverlay mangohud protonup-qt prismlauncher-bin
