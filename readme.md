@@ -41,8 +41,6 @@ chmod +x install.sh
 ```
 
 ## todo
-continue to improve formatting of readme
-
-figure out why the fuck hyprland with nvidia-open-dkms is so dogshit (flickering, stuttering videos. stuttering xwayland applications, whole screen flashing black briefly at random invervals)
+switch to hyprcursor, hypridle, hyprlock, & hyprpaper (more packages that are purpose-built for hyprland is a good thing)
 
 forgive myself for submitting so many awful commits
