@@ -17,8 +17,8 @@ my entire hyprland setup is based on 1amSimp1e's work and credit is v much due f
 https://github.com/ChrisTitusTech/ArchTitus/
 credit also due to ChrisTitusTech's ArchTitus script, which i borrowed some code from in order to make my install.sh actually useful.
 
-https://github.com/Jappie3/hyprcursor-phinger
-phinger cursor theme packaged in hyprcursor format
+https://github.com/ndom91/rose-pine-hyprcursor
+rose-pine-hyprcursor packaged in hyprcursor format
 
 <div align="center">
     <h1>installation</h1>
