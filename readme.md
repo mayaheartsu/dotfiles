@@ -10,15 +10,15 @@
 
 ## shoutouts to
 https://github.com/1amSimp1e/dots/tree/late-night-%F0%9F%8C%83 
-
-https://github.com/ChrisTitusTech/ArchTitus/
-
 my entire hyprland setup is based on 1amSimp1e's work and credit is v much due for that.
 
 ^^ please refer to their readme for detailed installation instructions & font downloads. ^^
 
+https://github.com/ChrisTitusTech/ArchTitus/
 credit also due to ChrisTitusTech's ArchTitus script, which i borrowed some code from in order to make my install.sh actually useful.
 
+https://github.com/Jappie3/hyprcursor-phinger
+phinger cursor theme packaged in hyprcursor format
 
 <div align="center">
     <h1>installation</h1>
