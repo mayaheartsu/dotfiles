@@ -41,6 +41,6 @@ chmod +x install.sh
 ```
 
 ## todo
-switch to hyprcursor, hypridle, hyprlock, & hyprpaper (more packages that are purpose-built for hyprland is a good thing)
+~~switch to hyprcursor, hypridle, hyprlock, & hyprpaper (more packages that are purpose-built for hyprland is a good thing)~~
 
 forgive myself for submitting so many awful commits
