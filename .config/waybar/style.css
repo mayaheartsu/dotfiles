@@ -64,6 +64,7 @@ window#waybar.hidden {
 #idle_inhibitor,
 #mpd,
 #bluetooth,
+#custom-notification,
 #custom-hyprPicker,
 #custom-power-menu,
 #custom-spotify,
@@ -107,6 +108,14 @@ window#waybar.hidden {
   background-color: #1b242b;
   border-radius: 7.5px;
   padding: 0 5px;
+}
+
+#custom-notification {
+  margin: 0 1px;
+  border-radius: 9.5px;
+  background-color: #1b242b;
+  border-radius: 7.5px;
+  padding: 0 12px;
 }
 
 #custom-launcher {

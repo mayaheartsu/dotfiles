@@ -64,7 +64,7 @@ echo -ne "
 "
 sleep 5
 
-yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst fastfetch file-roller firefox fzf geeqie git gparted grim guvcview hyprland hyprlang hyprcursor hypridle hyprlock keepassxc kitty libnotify light lightly-qt linux-headers ly man-db mpv nano nemo nemo-fileroller noto-fonts-cjk noto-fonts-emoji nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji rose-pine-cursor rose-pine-hyprcursor slurp stow swappy timeshift-bin tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed zoxide zsh
+yay -S --noconfirm afetch blueman base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst fastfetch file-roller firefox fzf geeqie git gparted grim guvcview hyfetch hyprland hyprcursor hypridle hyprlang hyprlock hyprpaper keepassxc kitty libnotify light lightly-qt linux-headers ly man-db mpv nano nemo nemo-fileroller noto-fonts-cjk noto-fonts-emoji nwg-look-bin obs-studio pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji rose-pine-cursor rose-pine-hyprcursor slurp stow swappy swaync syncthing timeshift tldr ttf-font-awesome vscodium-bin waybar wf-recorder wget wireplumber wlr-wlogout randr xdg-desktop-portal-hyprland xdg-user-dirs xed zoxide zsh
 
 
 clear
@@ -97,6 +97,7 @@ echo -ne "
 sleep 5
 
 # sudo systemctl enable sddm.service
+sudo systemctl enable ly
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service 
 sudo systemctl enable nvidia-resume.service
@@ -133,15 +134,28 @@ echo -ne "
 sleep 5
 
 cp -r ~/dotfiles/.config/* ~/.config
+cp ~/dotfiles/.p10k.zsh ~/
+cp ~/dotfiles/.zshrc ~/
 
 
 clear
 echo -ne "
 -------------------------------------------------------------------------
-                    DONE >:3
+                    change shell to zsh
 -------------------------------------------------------------------------
 "
 sleep 5
+
+chsh -s /usr/bin/zsh
+
+
+clear
+echo -ne "
+-------------------------------------------------------------------------
+                    DONE >:3 exiting...
+-------------------------------------------------------------------------
+"
+sleep 10
 
 #optional game related packages
 #lutris steam gamemode gamescope goverlay mangohud protonup-qt prismlauncher-bin
