@@ -61,6 +61,9 @@ zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias c='clear'
+alias quit='exit'
+alias uefi='systemctl reboot --firmware-setup'
+alias clean='yay -Scc --noconfirm'
 
 # Shell intergrations
 eval "$(fzf --zsh)"
