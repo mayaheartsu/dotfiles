@@ -64,7 +64,7 @@ echo -ne "
 "
 sleep 5
 
-yay -S --noconfirm afetch base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst fastfetch file-roller firefox fzf geeqie git gparted grim guvcview hyfetch hyprland hyprcursor hypridle hyprlang hyprlock hyprpaper keepassxc kitty libnotify light lightly-qt linux-headers ly man-db mpv nano nemo nemo-fileroller noto-fonts-cjk noto-fonts-emoji nwg-look obs-studio oh-my-posh-bin pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi rofi-emoji rose-pine-cursor rose-pine-hyprcursor slurp stow swappy swaync syncthing timeshift tldr ttf-font-awesome waybar wf-recorder wget wireplumber wlogout wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed zoxide zsh
+yay -S --noconfirm afetch base base-devel blueman bluez-tools brillo btop catppuccin-gtk-theme-mocha dunst fastfetch file-roller firefox fzf geeqie git gparted grim guvcview hyfetch hyprland hyprcursor hypridle hyprlang hyprlock hyprpaper keepassxc kitty libnotify light lightly-qt linux-headers ly man-db mpv nano nemo nemo-fileroller noto-fonts-cjk noto-fonts-emoji nwg-look obs-studio oh-my-posh-bin pamixer pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack polkit polkit-kde-agent python-requests qogir-icon-theme qt5ct ranger reflector rofi-wayland rofi-emoji rose-pine-cursor rose-pine-hyprcursor slurp stow swappy swaync syncthing timeshift tldr ttf-font-awesome waybar wf-recorder wget wireplumber wlogout wlr-randr xdg-desktop-portal-hyprland xdg-user-dirs xed zoxide zsh
 
 
 clear
