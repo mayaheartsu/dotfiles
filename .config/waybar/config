@@ -1,37 +1,30 @@
 {
-    "height": 30, // Waybar height (to be removed for auto height)
-    "layer": "top", // Waybar at top layer
+    "height": 30,
+    "layer": "top",
     "margin-top": 0,
     "margin-left": 0,
     "margin-bottom": 0,
     "margin-right": 0,
-    "spacing": 6, // Gaps between modules (4px)
-    "modules-left": ["custom/launcher", "cpu", "temperature", "memory", "hyprland/workspaces"],
-    "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["custom/spotify", "network", "backlight", "pulseaudio", "battery", "tray", "custom/notification", "custom/power-menu"],
+    "spacing": 5, // (4px)
+    "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/spotify", "network", "backlight", "pulseaudio", "battery", "clock", "tray", "custom/power-menu"],
+
     "hyprland/workspaces": {
-      "format": "{icon}",
-      "on-click": "activate",
-      "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "urgent": "",
-        "active": "",
-        "default": ""
-      }
+        "disable-scroll": true,
+        "on-click": "activate"
     },
+
     "hyprland/window": {
         "format": "{}"
     },
+
     "tray": {
         "spacing": 10
     },
+
     "clock": {
-        "format": "<span color='#bf616a'> </span>{:%A, %b %d - %I:%M %p}",
+        "format": "{:%D - %I:%M %p}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
 
@@ -41,6 +34,7 @@
       "max-length": 10,
       "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'",
     },
+
     "temperature": {
         // "thermal-zone": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -49,22 +43,25 @@
         "format": "{icon} {temperatureC}°C",
         "format-icons": [""]
     },
+
     "memory": {
         "interval": 30,
         "format":" {used:0.1f}G",
         "format-alt": " {}%",
         "max-length": 10,
     },
+
     "backlight": {
         "device": "DP-1",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-click": "",
     },
+
     "network": {
         "interval": 10,
         "format-wifi": "直 {signalStrength}%",
-        "format-ethernet": " {bandwidthDownBits}  {bandwidthUpBits}",
+        "format-ethernet": "",
         "format-disconnected": "睊",
         "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh",
         "format-disconnected": "Disconnected  ",
@@ -110,12 +107,6 @@
       "format-full": "  {capacity}%",
       "format-icons": [" ", " ", " ", " ", " "],
     },
-    "custom/weather": {
-      "exec": "python3 ~/.config/waybar/scripts/weather.py",
-      "restart-interval": 300,
-      "return-type": "json",
-      "on-click": "xdg-open https://weather.com/weather/today/l/83ee188a7c600820eccb529d73d35fc320fda83416a82ab803a840d4ac91dcf4"
-    },   
 
    "custom/spotify": {
     "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
@@ -125,14 +116,17 @@
     "on-double-click-right": "playerctl next",
     "on-scroll-down": "playerctl previous",
     },
+
     "custom/power-menu": {
-        "format": " <span color='#6a92d7'>⏻ </span>",
+        "format": "⏻ " ,
         "on-click": "wlogout",
-    }, 
+    },
+
     "custom/launcher": {
-        "format": " <span color='#6a92d7'> </span>",
+        "format": " ",
         "on-click": "rofi -show drun",
     },
+
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
