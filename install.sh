@@ -158,7 +158,7 @@ echo -ne "
 sleep 10
 
 #optional game related packages
-#lutris steam gamemode gamescope goverlay mangohud protonup-qt prismlauncher-bin
+#lutris steam gamemode gamescope goverlay mangohud protonup-qt prismlauncher-bin legcord-bin
 
 
 #/etc/environment
