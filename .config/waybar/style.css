@@ -30,7 +30,7 @@
 @define-color rosewater #f5e0dc;
 
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: Caskaydia Cove Nerd Font;
   font-size: 17px;
 }
 
@@ -78,7 +78,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 
 #workspaces button:hover {
-    color: @blue;
+    color: @text;
     box-shadow: inherit;
     text-shadow: inherit;
     background: rgba(0, 0, 0, 0.8);
@@ -87,17 +87,18 @@ button {
 
 #workspaces button {
     padding: 0 5px;
-    color: @surface2;
+    color: @blue;
     margin: 4px 0 4px 6px;
     transition: color 200ms ease-in-out;
 }
 
 #workspaces button.selected {
-    color: @lavender;
+    color: @red;
 }
 
 #workspaces button.active {
-    color: @lavender;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @mauve;
 }
 
 #workspaces button.urgent {

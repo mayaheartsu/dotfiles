@@ -6,7 +6,7 @@
     "margin-bottom": 0,
     "margin-right": 0,
     "spacing": 5, // (4px)
-    "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory"],
+    "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory", "custom/gpu-usage"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["custom/spotify", "network", "backlight", "pulseaudio", "battery", "clock", "tray", "custom/power-menu"],
 
@@ -25,7 +25,7 @@
 
     "clock": {
         "format": "{:%D - %I:%M %p}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%A, %B %d %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
 
     "cpu": {
@@ -36,6 +36,7 @@
     },
 
     "temperature": {
+        "interval": 10,
         // "thermal-zone": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 90,
@@ -45,7 +46,7 @@
     },
 
     "memory": {
-        "interval": 30,
+        "interval": 10,
         "format":" {used:0.1f}G",
         "format-alt": " {}%",
         "max-length": 10,
@@ -60,22 +61,22 @@
 
     "network": {
         "interval": 10,
-        "format-wifi": "直 {signalStrength}%",
+        "format-wifi": "󰖩 {signalStrength}%",
         "format-ethernet": "",
-        "format-disconnected": "睊",
+        "format-disconnected": "󰤮",
         "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh",
-        "format-disconnected": "Disconnected  ",
+        "format-disconnected": "No Connection ",
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-bluetooth": "  {volume}%",
         "format-bluetooth-muted": " ",
-        "format-muted": "婢",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
@@ -106,6 +107,13 @@
       "format-alt": "{icon} {time}",
       "format-full": "  {capacity}%",
       "format-icons": [" ", " ", " ", " ", " "],
+    },
+
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/hwmon/hwmon5/device/gpu_busy_percent",
+        "format": "󰍹 {}%",
+        "return-type": "",
+        "interval": 10
     },
 
    "custom/spotify": {
