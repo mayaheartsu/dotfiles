@@ -97,10 +97,18 @@ sleep 5
 
 # sudo systemctl enable sddm.service
 sudo systemctl enable ly
-sudo systemctl enable nvidia-suspend.service
-sudo systemctl enable nvidia-hibernate.service 
-sudo systemctl enable nvidia-resume.service
-
+gpu_type=$(lspci)
+if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
+  sudo systemctl enable nvidia-suspend.service
+  sudo systemctl enable nvidia-hibernate.service 
+  sudo systemctl enable nvidia-resume.service
+elif lspci | grep 'VGA' | grep -E "Radeon|AMD"; then
+  clear
+elif grep -E "Integrated Graphics Controller" <<< ${gpu_type}; then
+  clear
+elif grep -E "Intel Corporation UHD" <<< ${gpu_type}; then
+  clear
+fi
 
 clear
 echo -ne "
