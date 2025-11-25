@@ -135,6 +135,7 @@ sleep 5
 cp -r ~/dotfiles/.config/* ~/.config
 cp ~/dotfiles/.p10k.zsh ~/
 cp ~/dotfiles/.zshrc ~/
+cp ~/dotfiles/.bashrc ~/
 
 
 clear
