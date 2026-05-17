@@ -1,0 +1,13 @@
+# Config files split up by section for ease of editing :)
+
+require("modules.mocha")
+require("modules.input")
+require("modules.binds")
+require("modules.env")
+require("modules.monitors")
+require("modules.animations")
+require("modules.decoration")
+require("modules.layout")
+require("modules.workspaces")
+require("modules.windowrules")
+require("modules.exec")
