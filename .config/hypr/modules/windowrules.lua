@@ -26,12 +26,21 @@ hl.window_rule({
     size =  {1600, 900},
 })
 
+hl.window_rule({ 
+    name = "clipse",
+    match = { class = "(clipse)$" },
+    float = true,
+    size = { 622, 652 },
+    stay_focused = true
+})
+
+hl.layer_rule({ match = { namespace = "notifications" }, animation ="fadeIn"})
 hl.layer_rule({ match = { namespace = "hyprlauncher" }, animation="popin"})
 
 -- No Screenshare
 hl.window_rule({ match = { class = "^(Bitwarden)$" }, no_screen_share = true})
 hl.window_rule({ match = { class = "^(nemo)$" }, no_screen_share = true})
-hl.layer_rule({ match = { namespace = "notifications" }, no_screen_share = true})
+hl.layer_rule({ match = { namespace = "notifications" }, no_screen_share = true,})
 
 local browserClass = "^([Ff]irefox)|helium$"
 
