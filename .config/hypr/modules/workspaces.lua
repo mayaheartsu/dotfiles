@@ -68,7 +68,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = [[^(vscodium)$]] },
+    match = { class = [[^(vs|codium)$]] },
     workspace = "3 silent",
 })
 
