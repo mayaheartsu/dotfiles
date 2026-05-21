@@ -5,11 +5,11 @@
 -- | |____| | | \ V / 
 -- |______|_| |_|\_/  
 
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
+-- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "32")
 hl.env("HYPRCURSOR_SIZE", "32")
---hl.env("GTK_THEME", "Catppuccin-Mocha-Standard-Lavender-dark")
+hl.env("GTK_THEME", "catppuccin-mocha-lavender-standard+default:dark")
 hl.env("XCURSOR_THEME", "BreezeX-RosePine-Linux")
 hl.env("HYPRCURSOR_THEME", "BreezeX-RosePine-Linux")
 
