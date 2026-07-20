@@ -47,6 +47,7 @@ local browserClass = "^([Ff]irefox)|helium$"
 -- Video Content Types
 hl.window_rule({ match = { initial_class = "vlc" }, content = "video"})
 hl.window_rule({ match = { initial_class = "mpv" }, content = "video"})
+hl.window_rule({ match = { initial_class = "harbor" }, content = "video"})
 hl.window_rule({ match = { initial_class = ".*jellyfin-media-player$" }, content = "video"})
 hl.window_rule({ match = { title = "^(Picture-In-Picture)$" }, content = "video"})
 hl.window_rule({ match = { title = "^.*(- YouTube).*$" }, content = "video"})
