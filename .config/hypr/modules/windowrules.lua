@@ -62,6 +62,12 @@ hl.window_rule({
     tag = "+video-game"
 })
 
+-- gamescope games
+hl.window_rule({
+    match = { initial_class = [[^(gamescope)$]] },
+    tag = "+gamescope"
+})
+
 -- content 3
 hl.window_rule({
     match = { content = 3 },
@@ -126,6 +132,36 @@ hl.window_rule({
     border_size = 0,
     decorate = false,
     force_rgbx = true,
+    fullscreen = true,
+    immediate = true,
+    fullscreen_state = 2, 2,
+    idle_inhibit = "always",
+    no_anim = true,
+    no_blur = true,
+    no_dim = true,
+    no_max_size = true,
+    no_shadow = true,
+    opacity = 1.0,
+    opaque = true,
+    persistent_size = true,
+    pseudo = true,
+    render_unfocused = true,
+    rounding = 0,
+    sync_fullscreen = true,
+    confine_pointer = true,
+})
+
+hl.window_rule({
+    name = "gamescope-games",
+    match = {
+        tag = "gamescope"
+    },
+    --content = "game",
+    workspace = gamingWorkspace,
+    monitor = "DP-1",
+    border_size = 0,
+    --decorate = false,
+    --force_rgbx = true,
     fullscreen = true,
     immediate = true,
     fullscreen_state = 2, 2,
