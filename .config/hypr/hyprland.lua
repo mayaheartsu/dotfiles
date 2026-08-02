@@ -11,3 +11,6 @@ require("modules.layout")
 require("modules.workspaces")
 require("modules.windowrules")
 require("modules.exec")
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
