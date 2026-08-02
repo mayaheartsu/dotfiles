@@ -2,9 +2,10 @@
 ui_scale = 1.1500000096857548
 
 [bar.default]
+background_opacity = 0.97999997809529305
 capsule = true
 capsule_radius = 4
-center = [ "active_window" ]
+center = [ "active_window", "wallpaper" ]
 end = [
     "media",
     "tray",
@@ -25,6 +26,8 @@ radius = 0
 start = [ "launcher", "workspaces", "group:g1" ]
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     enabled = true
     fill = "surface_variant"
     id = "g1"
@@ -108,7 +111,6 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
     box_height = 70.0
@@ -129,7 +131,6 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
 [notification]
 layer = "overlay"
@@ -149,6 +150,10 @@ community_palette = "Oxocarbon"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "zen-browser", "prismlauncher", "obs", "hyprtoolkit", "papirus-icons", "yazi" ]
 
 [wallpaper]
 directory = "/home/maya/.config/hypr/wallpapers"
@@ -186,6 +191,7 @@ format = "{:%A, %B %d - %-I:%M %p}"
 
 [widget.cpu]
 display = "text"
+visualization = "none"
 
 [widget.media]
 max_length = 240
@@ -196,13 +202,16 @@ enabled = false
 
 [widget.ram]
 display = "text"
+visualization = "none"
 
 [widget.sysmon]
-display = "text"
+show_value = true
 stat = "gpu_temp"
+visualization = "none"
 
 [widget.temp]
 display = "text"
+visualization = "none"
 
 [widget.workspaces]
 focused_output_only = true
