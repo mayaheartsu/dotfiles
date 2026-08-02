@@ -9,9 +9,9 @@
 
 hl.env("XCURSOR_SIZE", "32")
 hl.env("HYPRCURSOR_SIZE", "32")
-hl.env("GTK_THEME", "catppuccin-mocha-lavender-standard+default:dark")
-hl.env("XCURSOR_THEME", "BreezeX-RosePine-Linux")
-hl.env("HYPRCURSOR_THEME", "BreezeX-RosePine-Linux")
+hl.env("GTK_THEME", "adw-gtk3")
+hl.env("XCURSOR_THEME", "Adwaita")
+hl.env("HYPRCURSOR_THEME", "Adwaita")
 
 -- Toolkit backend
 hl.env("GDK_BACKEND", "wayland,x11,*")
@@ -29,7 +29,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
-hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 --
 
