@@ -63,6 +63,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = [[^(helium)$]] },
+    workspace = "2 silent",
+})
+
+hl.window_rule({
     match = { class = [[^(.*(disc|goofc|WebC|Armc|legc|Venc)ord.*)$]] },
     workspace = "2 silent",
 })
@@ -88,7 +93,17 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = [[^(org.prismlauncher.PrismLauncher)$]] },
+    workspace = "5 silent",
+})
+
+hl.window_rule({
     match = { class = [[^(Spotify)$]] },
+    workspace = "6 silent",
+})
+
+hl.window_rule({
+    match = { class = "sidra" },
     workspace = "6 silent",
 })
 
