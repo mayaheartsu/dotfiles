@@ -1,0 +1,9 @@
+{
+    "storefront": "us",
+    "lastPageUrl": "",
+    "language": "en-US",
+    "discord": {
+        "enabled": true
+    },
+    "theme": "catppuccin"
+}
