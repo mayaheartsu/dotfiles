@@ -5,8 +5,10 @@ ui_scale = 1.1500000096857548
 background_opacity = 0.97999997809529305
 capsule = true
 capsule_radius = 4
-center = [ "active_window", "wallpaper" ]
+center = [ "active_window" ]
 end = [
+    "audio_visualizer",
+    "lyrics",
     "media",
     "tray",
     "notifications",
@@ -23,7 +25,8 @@ end = [
 margin_ends = 0
 padding = 2
 radius = 0
-start = [ "launcher", "workspaces", "group:g1" ]
+start = [ "launcher", "workspaces", "wallpaper", "group:g1" ]
+thickness = 38
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -31,9 +34,10 @@ start = [ "launcher", "workspaces", "group:g1" ]
     enabled = true
     fill = "surface_variant"
     id = "g1"
-    members = [ "cpu", "temp", "sysmon", "ram" ]
+    members = [ "cpu", "temp", "ram", "sysmon" ]
     opacity = 1.0
     padding = 6.0
+    radius = 4.0
 
 [control_center]
 hidden_tabs = [ "monitor" ]
@@ -136,6 +140,13 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
 layer = "overlay"
 position = "top_center"
 
+[plugin_settings."h465855hgg/lyrics"]
+display_mode = "lyrics"
+player_allowlist = [ "sidra" ]
+
+[plugins]
+enabled = [ "h465855hgg/lyrics" ]
+
 [shell]
 corner_radius_scale = 0.20000000298023224
 font_family = "Inter"
@@ -153,7 +164,7 @@ wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
-    community_ids = [ "zen-browser", "prismlauncher", "obs", "hyprtoolkit", "papirus-icons", "yazi" ]
+    community_ids = [ "discord", "prismlauncher", "obs", "hyprtoolkit", "papirus-icons", "yazi" ]
 
 [wallpaper]
 directory = "/home/maya/.config/hypr/wallpapers"
@@ -180,8 +191,13 @@ directory = "/home/maya/.config/hypr/wallpapers"
 unit = "imperial"
 
 [widget.active_window]
-max_length = 720
 title_scroll = "always"
+
+[widget.audio_visualizer]
+bands = 128
+centered = false
+enabled = false
+mirrored = false
 
 [widget.bluetooth]
 enabled = false
@@ -193,9 +209,25 @@ format = "{:%A, %B %d - %-I:%M %p}"
 display = "text"
 visualization = "none"
 
+[widget.lyrics]
+enable_scroll = false
+enabled = false
+show_artist = false
+show_cover = false
+show_glyph = false
+type = "h465855hgg/lyrics:lyrics"
+
 [widget.media]
+artist_first = true
+hide_album_art = true
 max_length = 240
 title_scroll = "on_hover"
+
+    [widget.media.actions]
+    back = "none"
+    forward = "none"
+    scroll_down = "none"
+    scroll_up = "none"
 
 [widget.network]
 enabled = false
