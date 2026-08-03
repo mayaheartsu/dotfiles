@@ -9,8 +9,9 @@
 
 local menu = "hyprlauncher"
 local terminal = "kitty"
-local browser = "firefox"
+local browser = "helium-browser"
 local fileManager = "nemo"
+local screenshot = "hyprscreen"
 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
@@ -24,6 +25,7 @@ hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(terminal .. " -e ranger"))
 hl.bind(secondMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
+hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
 
 
 -- Brightness
