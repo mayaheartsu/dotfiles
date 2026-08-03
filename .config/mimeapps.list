@@ -1,10 +1,30 @@
+[Added Associations]
+application/x-bcpio=org.gnome.FileRoller.desktop;
+application/x-sv4cpio=org.gnome.FileRoller.desktop;
+application/x-sv4crc=org.gnome.FileRoller.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+image/avif=org.geeqie.Geeqie.desktop;
+image/webp=org.geeqie.Geeqie.desktop;
+image/x-icns=org.geeqie.Geeqie.desktop;
+video/mp4=mpv.desktop;
+x-scheme-handler/harbor=harbor-handler.desktop
+x-scheme-handler/stremio=harbor-handler.desktop;
+
 [Default Applications]
+application/x-bcpio=org.gnome.FileRoller.desktop;
+application/x-sv4cpio=org.gnome.FileRoller.desktop;
+application/x-sv4crc=org.gnome.FileRoller.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+image/avif=org.geeqie.Geeqie.desktop;
+image/webp=org.geeqie.Geeqie.desktop;
+image/x-icns=org.geeqie.Geeqie.desktop;
+inode/directory=nemo.desktop
 text/html=helium.desktop
+x-scheme-handler/about=helium.desktop
+x-scheme-handler/harbor=harbor-handler.desktop
 x-scheme-handler/http=helium.desktop
 x-scheme-handler/https=helium.desktop
-x-scheme-handler/about=helium.desktop
+x-scheme-handler/stremio=harbor-handler.desktop
 x-scheme-handler/unknown=helium.desktop
-inode/directory=nemo.desktop
-
-[Added Associations]
-video/mp4=mpv.desktop;
+x-scheme-handler/itms=sidra.desktop
+x-scheme-handler/discord=vesktop.desktop
