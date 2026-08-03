@@ -38,7 +38,7 @@ hl.config({
             range        = 8,
             render_power = 3,
             color        = "0xffb4befe",
-            color_inactive = 0x50000000,
+            color_inactive = "0x50000000",
         },
 
         blur = {
