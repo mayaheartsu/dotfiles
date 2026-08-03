@@ -131,7 +131,7 @@ hl.window_rule({
     monitor = "DP-1",
     border_size = 0,
     decorate = false,
-    force_rgbx = true,
+    -- force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
     fullscreen = true,
     immediate = true,
     fullscreen_state = 2, 2,
@@ -147,8 +147,8 @@ hl.window_rule({
     pseudo = true,
     render_unfocused = true,
     rounding = 0,
-    sync_fullscreen = true,
     confine_pointer = true,
+    sync_fullscreen= true,
 })
 
 hl.window_rule({
@@ -161,7 +161,7 @@ hl.window_rule({
     monitor = "DP-1",
     border_size = 0,
     --decorate = false,
-    --force_rgbx = true,
+    -- force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
     fullscreen = true,
     immediate = true,
     fullscreen_state = 2, 2,
@@ -177,8 +177,8 @@ hl.window_rule({
     pseudo = true,
     render_unfocused = true,
     rounding = 0,
-    sync_fullscreen = true,
     confine_pointer = true,
+    sync_fullscreen= true,
 })
 
 -- makes all steam client windows float (useful for update news & friends list)
