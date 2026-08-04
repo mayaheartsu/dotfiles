@@ -9,42 +9,37 @@
 
 -- https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "1",
-    "name:terminal",
     monitor = "DP-2",
 })
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "2",
-    "name:web & chat",
     monitor = "DP-2",
-    layout_opts = 
-        {orientation = "right"}, 
-        {mfact = 0.60}
+    layout_opts = {
+        orientation = "right",
+        mfact = 0.60,
+    },
 })
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "3",
-    "name:text editing",
     monitor = "DP-2",
 })
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "4",
-    "name:steam",
     monitor = "DP-1",
 })
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "5",
-    "name:game",
     monitor = "DP-1",
 })
 
-hl.workspace_rule ({
+hl.workspace_rule({
     workspace = "6",
-    "name:music",
     monitor = "DP-1",
 })
 
@@ -52,38 +47,32 @@ hl.workspace_rule ({
 -- App workspace assignments
 
 hl.window_rule({
-    match = { class = [[^(kitty)$]] },
+    match = { class = [[^(kitty|foot)$]] },
     workspace = "1 silent",
 })
 
-
 hl.window_rule({
-    match = { class = [[^(firefox)$]] },
+    match = { class = [[(?i)^(firefox|helium|zen)$]] },
     workspace = "2 silent",
 })
 
 hl.window_rule({
-    match = { class = [[^(helium)$]] },
+    match = { class = [[^(vesktop|.*(disc|goofc|WebC|Armc|legc|Venc)ord.*)$]] },
     workspace = "2 silent",
 })
 
 hl.window_rule({
-    match = { class = [[^(.*(disc|goofc|WebC|Armc|legc|Venc)ord.*)$]] },
-    workspace = "2 silent",
-})
-
-hl.window_rule({
-    match = { class = [[^(vs|codium)$]] },
+    match = { class = [[(?i)^(code|vscodium|codium)$]] },
     workspace = "3 silent",
 })
 
 hl.window_rule({
-    match = { class = [[^(Bitwarden)$]] },
+    match = { class = [[(?i)^(Bitwarden)$]] },
     workspace = "3 silent",
 })
 
 hl.window_rule({
-    match = { class = [[^(proton.vpn.app.gtk)$]] },
+    match = { class = [[(?i)^(proton.*vpn.*)$]] },
     workspace = "3 silent",
 })
 
@@ -98,12 +87,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = [[^(Spotify)$]] },
+    match = { class = [[(?i)^(Spotify)$]] },
     workspace = "6 silent",
 })
 
 hl.window_rule({
-    match = { class = "sidra" },
+    match = { class = [[^(sidra)$]] },
     workspace = "6 silent",
 })
 
@@ -113,6 +102,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "gimp" },
+    match = { class = [[(?i)gimp]] },
     workspace = "6 silent",
 })
