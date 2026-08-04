@@ -130,11 +130,11 @@ hl.window_rule({
     workspace = gamingWorkspace,
     monitor = "DP-1",
     border_size = 0,
-    decorate = false,
-    -- force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
+    --decorate = false,
+    --force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
     fullscreen = true,
     immediate = true,
-    fullscreen_state = 2, 2,
+    --fullscreen_state = 2, 2, --REMOVED: Replaced with standard `fullscreen = true`
     idle_inhibit = "always",
     no_anim = true,
     no_blur = true,
@@ -144,11 +144,11 @@ hl.window_rule({
     opacity = 1.0,
     opaque = true,
     persistent_size = true,
-    pseudo = true,
+    --pseudo = true, -- REMOVED: Caused buffer scaling conflicts with Proton
     render_unfocused = true,
     rounding = 0,
     confine_pointer = true,
-    sync_fullscreen= true,
+    --sync_fullscreen= true, -- REMOVED: -- Caused forced client state desyncs
 })
 
 hl.window_rule({
@@ -164,7 +164,7 @@ hl.window_rule({
     -- force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
     fullscreen = true,
     immediate = true,
-    fullscreen_state = 2, 2,
+    --fullscreen_state = 2, 2, --REMOVED: Replaced with standard `fullscreen = true`
     idle_inhibit = "always",
     no_anim = true,
     no_blur = true,
@@ -174,11 +174,11 @@ hl.window_rule({
     opacity = 1.0,
     opaque = true,
     persistent_size = true,
-    pseudo = true,
+    --pseudo = true, -- REMOVED: Caused buffer scaling conflicts with Proton
     render_unfocused = true,
     rounding = 0,
     confine_pointer = true,
-    sync_fullscreen= true,
+    --sync_fullscreen= true, -- REMOVED: -- Caused forced client state desyncs
 })
 
 -- makes all steam client windows float (useful for update news & friends list)
