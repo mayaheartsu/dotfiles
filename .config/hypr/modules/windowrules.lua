@@ -56,62 +56,19 @@ hl.window_rule({ match = { title = "^.*(- YouTube).*$" }, {match = browserClass}
 -- Gaming Window Rules
 local steamAppClass = "^steam_app(_\\d+|default)?$"
 
--- proton games
-hl.window_rule({
-    match = { xdg_tag = [[^(proton-game)$]] },
-    tag = "+video-game"
-})
+hl.window_rule({ match = { xdg_tag = [[^(proton-game)$]] }, tag = "+video-game" }) -- proton games
+hl.window_rule({ match = { initial_class = [[^(gamescope)$]] }, tag = "+video-game" }) -- gamescope games
+hl.window_rule({ match = { content = 3 }, tag = "+video-game" }) -- content 3 (https://wiki.hypr.land/Configuring/Basics/Window-Rules/#props)
+hl.window_rule({ match = { initial_class = steamAppClass }, tag = "+video-game" }) -- steamapp class (xwayland games)
+hl.window_rule({ match = { initial_class = [[^(.*\.exe)$]] }, tag = "+video-game" }) -- exe catchall
+hl.window_rule({ match = { initial_title = [[^(Minecraft|Tekxit).*$]] }, tag = "+video-game" }) -- minecraft & modpacks
+hl.window_rule({ match = { initial_class = [[^(artofrally).*$]] }, tag = "+video-game" }) -- art of rally
 
--- gamescope games
+-- exclusions
 hl.window_rule({
-    match = { initial_class = [[^(gamescope)$]] },
-    tag = "+gamescope"
-})
-
--- content 3
-hl.window_rule({
-    match = { content = 3 },
-    tag = "+video-game"
-})
-
--- steamapp class
-hl.window_rule({
-    match = { initial_class = steamAppClass },
-    tag = "+video-game"
-})
-
--- exe catchall
-hl.window_rule({
-    match = { initial_class = [[^(.*\.exe)$]] },
-    tag = "+video-game"
-})
-
--- minecraft & modpacks
-hl.window_rule({
-    match = { initial_title = [[^(Minecraft|Tekxit).*$]] },
-    tag = "+video-game"
-})
-
--- art of rally
-hl.window_rule({
-    match = { initial_class = [[^(artofrally).*$]] },
-    tag = "+video-game"
-})
-
--- exclude splash screens for steam games
-hl.window_rule({
-    match = { 
+match = { 
         class = steamAppClass, 
-        title = "SplashScreen" 
-    },
-    tag = "-video-game"
-})
-
--- exclusde crash reports
-hl.window_rule({
-    match = { 
-        tag = "video-game", 
-        title = [[([Cc]rash.?[Rr]eport)]] 
+        title = [[([Cc]rash.?[Rr]eport|SplashScreen)]] 
     },
     tag = "-video-game"
 })
@@ -119,7 +76,6 @@ hl.window_rule({
 -- default monitors for wayland-native proton games controlled by steam launch parameter - this is important and ensures they are assigned to the correct display and workspace
 
 local gamingWorkspace = "5"
-workspace = gamingWorkspace
 
 hl.window_rule({
     name = "video-games",
@@ -130,7 +86,7 @@ hl.window_rule({
     workspace = gamingWorkspace,
     monitor = "DP-1",
     border_size = 0,
-    --decorate = false,
+    --decorate = false, -- no_anim, no_blur, no_dim, no_shadow all effectively do the same thing as decorate = false
     --force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
     fullscreen = true,
     immediate = true,
@@ -151,55 +107,10 @@ hl.window_rule({
     --sync_fullscreen= true, -- REMOVED: -- Caused forced client state desyncs
 })
 
-hl.window_rule({
-    name = "gamescope-games",
-    match = {
-        tag = "gamescope"
-    },
-    --content = "game",
-    workspace = gamingWorkspace,
-    monitor = "DP-1",
-    border_size = 0,
-    --decorate = false,
-    -- force_rgbx = true, -- REMOVED: Kills 10-bit color / HDR formats
-    fullscreen = true,
-    immediate = true,
-    --fullscreen_state = 2, 2, --REMOVED: Replaced with standard `fullscreen = true`
-    idle_inhibit = "always",
-    no_anim = true,
-    no_blur = true,
-    no_dim = true,
-    no_max_size = true,
-    no_shadow = true,
-    opacity = 1.0,
-    opaque = true,
-    persistent_size = true,
-    --pseudo = true, -- REMOVED: Caused buffer scaling conflicts with Proton
-    render_unfocused = true,
-    rounding = 0,
-    confine_pointer = true,
-    --sync_fullscreen= true, -- REMOVED: -- Caused forced client state desyncs
-})
-
--- makes all steam client windows float (useful for update news & friends list)
-hl.window_rule({
-    match = { class = [[^(steam)$]] },
-    float = true
-})
--- makes steam client override the float and be tiled
-hl.window_rule({
-    match = { 
-        class = [[^(steam)$]],
-        title = [[(Steam)$]]
-    },
-    tile = true
-})
-
--- makes steam friends list stay at a locked size
-hl.window_rule({
-    match = { title = [[^(Friends List)$]] },
-    size = { 280, 800 }
-})
+-- Steam client window tile, friends list + settings + news float 
+hl.window_rule({ match = { class = [[^(steam)$]] }, float = true })
+hl.window_rule({ match = { class = [[^(steam)$]], title = [[(Steam)$]] }, tile = true })
+hl.window_rule({ match = { title = [[^(Friends List)$]] }, size = { 280, 800 } })
 
 hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
