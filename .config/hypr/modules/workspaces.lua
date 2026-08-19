@@ -77,6 +77,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = [[^GitHub Desktop$]] },
+    workspace = "3 silent",
+})
+
+hl.window_rule({
     match = { class = [[^(steam)$]] },
     workspace = "4 silent",
 })
