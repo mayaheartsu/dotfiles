@@ -498,11 +498,11 @@
         "enableMarkdown": false,
         "enableMediaToast": false,
         "enabled": true,
-        "location": "top_right",
-        "lowUrgencyDuration": 3,
+        "location": "top",
+        "lowUrgencyDuration": 5,
         "monitors": [
         ],
-        "normalUrgencyDuration": 8,
+        "normalUrgencyDuration": 10,
         "overlayLayer": true,
         "respectExpireTimeout": false,
         "saveToHistory": {

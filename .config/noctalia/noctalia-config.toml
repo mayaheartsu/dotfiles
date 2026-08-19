@@ -6,27 +6,12 @@ background_opacity = 0.97999997809529305
 capsule = true
 capsule_radius = 4
 center = [ "active_window" ]
-end = [
-    "audio_visualizer",
-    "lyrics",
-    "media",
-    "tray",
-    "notifications",
-    "clipboard",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "battery",
-    "clock",
-    "control-center",
-    "session"
-]
+end = [ "group:g2", "group:g3", "group:g4", "group:g5" ]
 margin_ends = 0
 padding = 2
 radius = 0
-start = [ "launcher", "workspaces", "wallpaper", "group:g1" ]
-thickness = 38
+start = [ "group:g6", "group:g1" ]
+thickness = 32
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -35,6 +20,61 @@ thickness = 38
     fill = "surface_variant"
     id = "g1"
     members = [ "cpu", "temp", "ram", "sysmon" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "lyrics", "audio_visualizer", "media" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "tray", "clipboard", "wallpaper" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "network", "bluetooth", "volume", "brightness", "battery" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g5"
+    members = [ "notifications", "clock", "session" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g6"
+    members = [ "launcher", "workspaces" ]
     opacity = 1.0
     padding = 6.0
     radius = 4.0
@@ -142,7 +182,9 @@ position = "top_center"
 
 [plugin_settings."h465855hgg/lyrics"]
 display_mode = "lyrics"
+double_line_auto_fit = false
 player_allowlist = [ "sidra" ]
+show_translation = false
 
 [plugins]
 enabled = [ "h465855hgg/lyrics" ]
@@ -196,7 +238,6 @@ title_scroll = "always"
 [widget.audio_visualizer]
 bands = 128
 centered = false
-enabled = false
 mirrored = false
 
 [widget.bluetooth]
@@ -211,7 +252,8 @@ visualization = "none"
 
 [widget.lyrics]
 enable_scroll = false
-enabled = false
+hide_when_no_lyrics = true
+hide_when_paused = true
 show_artist = false
 show_cover = false
 show_glyph = false
@@ -244,6 +286,11 @@ visualization = "none"
 [widget.temp]
 display = "text"
 visualization = "none"
+
+[widget.tray]
+drawer = true
+drawer_columns = 5
+match_adjacent_spacing = true
 
 [widget.workspaces]
 focused_output_only = true
