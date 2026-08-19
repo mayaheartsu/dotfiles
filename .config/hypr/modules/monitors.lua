@@ -50,7 +50,7 @@ hl.monitor({
 
 -- HDR rendering settings
 hl.config({
-    render = ({
+    render = {
         direct_scanout = 0, -- Enables direct scanout. Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen (e.g. game). It is also recommended to set this to false if the fullscreen application shows graphical glitches. 2 - off, 1 - on, 2 - auto (on with content type ‘game’)
         -- Set this to 0 to avoid breakage in HDR. If left on, direct_scanout will disrupt hyprland's ability to properly facilitate hdr swapchain. A lot of heartache went into learning about this
         -- cm_fs_passthrough = 2,  -- 1 = always pass through color settings, 2 = HDR only
@@ -58,7 +58,7 @@ hl.config({
         cm_auto_hdr = 2, -- Auto-switch to HDR in fullscreen when needed. 0 - off, 1 - switch to cm, hdr, 2 - switch to cm, hdredid
         -- cm_auto_hdr = 0 if games refuse to play nice and appear with washed out colors
     }
-)})
+})
 
 hl.config({
     general = {
