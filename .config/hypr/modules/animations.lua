@@ -46,6 +46,19 @@ hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 hl.config({
+    animations = {
+        enabled = true,
+        bezier = {
+            resizeEase = { 0.05, 0.9, 0.1, 1.05 },
+        },
+        animation = {
+            -- "windowsResize", enabled, speed, curve
+            { "windowsResize", 1, 3, "resizeEase" },
+        }
+    }
+})
+
+hl.config({
     misc = {
         animate_manual_resizes = true,
         animate_mouse_windowdragging = true,
