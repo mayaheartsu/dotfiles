@@ -59,7 +59,7 @@ zstyle ':fzf-tab:complete:cd*' fzf-preview "ls --color $realpath"
 zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza -al --no-permissions --no-user --time-style="+%d %b %I:%M %p" --color=always --group-directories-first --icons=always'
 alias c='clear'
 alias quit='exit'
 alias uefi='systemctl reboot --firmware-setup'
