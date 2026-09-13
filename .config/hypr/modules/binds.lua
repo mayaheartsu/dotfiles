@@ -11,6 +11,7 @@ local menu = "hyprlauncher"
 local terminal = "kitty"
 local browser = "helium-browser"
 local fileManager = "nemo"
+local fileManagerTerm = "kitty -e yazi"
 local screenshot = "hyprscreen"
 
 
@@ -23,8 +24,8 @@ hl.bind(mainMod .. "+ d", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. "+ RETURN", hl.dsp.exec_cmd(terminal, {workspace = "1 silent"}))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
-hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(terminal .. " -e ranger"))
-hl.bind(secondMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
+hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(fileManagerTerm))
+hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
 hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
 
 
