@@ -28,6 +28,13 @@ hl.config({
     },
 })
 
+hl.config({
+    cursor = {
+	    no_hardware_cursors = 0,
+	    use_cpu_buffer = 0,
+    },
+})
+
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
