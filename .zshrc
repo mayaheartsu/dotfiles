@@ -68,3 +68,6 @@ alias clean='yay -Scc --noconfirm'
 # Shell intergrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Add .local/bin to PATH
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
