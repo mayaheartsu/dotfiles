@@ -55,7 +55,8 @@ cp -r ~/dotfiles/.config/* ~/.config
 cp ~/dotfiles/.p10k.zsh ~/
 cp ~/dotfiles/.zshrc ~/
 cp ~/dotfiles/.bashrc ~/
-
+mkdir ~/.local/bin
+cp ~/dotfiles/.local/* ~/.local
 
 clear
 echo -ne "
