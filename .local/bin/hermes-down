@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+echo "[*] Stopping Hermes container..."
+podman stop -t 10 hermes-agent 2>/dev/null || true
+
+echo "[*] Removing Hermes container..."
+podman rm hermes-agent 2>/dev/null || true
+
+echo "[✓] Hermes Agent has been shut down."

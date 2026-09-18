@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -e
+
+VOLUME_NAME="hermes_data"
+
+# 1. Ensure the named volume exists
+if ! podman volume exists "$VOLUME_NAME" 2>/dev/null; then
+    echo "[*] Creating named Podman volume '$VOLUME_NAME'..."
+    podman volume create "$VOLUME_NAME"
+fi
+
+# 2. Clean stale locks safely inside the volume namespace
+echo "[*] Cleaning stale sockets and locks inside volume..."
+podman run --rm -v "$VOLUME_NAME":/opt/data alpine sh -c \
+  "rm -f /opt/data/*.lock /opt/data/*.db-shm /opt/data/*.db-wal /opt/data/state/*.sock 2>/dev/null || true"
+
+# 3. Launch the container attached to the named volume
+echo "[*] Launching Podman container..."
+podman run -d \
+  --replace \
+  --net=host \
+  --name hermes-agent \
+  -v "$VOLUME_NAME":/opt/data:Z \
+  -e HERMES_DASHBOARD=true \
+  -e HERMES_DASHBOARD_HOST=127.0.0.1 \
+  -e API_SERVER_ENABLED=true \
+  -e API_SERVER_HOST=127.0.0.1 \
+  -e API_SERVER_PORT=8642 \
+  -e OLLAMA_BASE_URL=http://127.0.0.1:11434 \
+  docker.io/nousresearch/hermes-agent:latest gateway run
+
+echo "[*] Waiting for container initialization..."
+sleep 4
+
+# 4. Run doctor fix silently to ensure session schemas are aligned
+echo "[*] Running doctor fix..."
+podman exec hermes-agent hermes doctor --fix >/dev/null 2>&1 || true
+
+echo ""
+echo "===================================================="
+echo "[✓] Hermes Agent is up and ready!"
+echo "    Dashboard: http://127.0.0.1:8642"
+echo "    Web UI:    http://127.0.0.1:9119"
+echo "----------------------------------------------------"
+echo "[*] Session Access Token:"
+curl -s http://127.0.0.1:9119/ | grep -oP '__HERMES_SESSION_TOKEN__="\K[^"]+' || echo "Token not ready yet"
+echo "===================================================="
