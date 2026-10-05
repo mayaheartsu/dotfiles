@@ -26,7 +26,8 @@ hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(fileManagerTerm))
 hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
-hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
+hl.bind(secondMod .. "+ s", hl.dsp.exec_cmd(screenshot))
+hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd("noctalia msg panel-toggle alexander/screen-toolkit:panel"))
 
 
 -- Brightness
@@ -46,8 +47,8 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Window Management
-hl.bind(mainMod .. " + q", hl.dsp.window.close({"activewindow",})) --close one window
-hl.bind(secondMod .." + q", hl.dsp.window.kill({"activewindow,"})) --close all windows
+hl.bind(mainMod .. " + q", hl.dsp.window.close({"activewindow",})) -- Close single window
+hl.bind(secondMod .." + q", hl.dsp.window.kill({"activewindow,"})) -- Close application
 hl.bind(mainMod .. " + t", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.layout("swapwithmaster master"))
 
@@ -72,21 +73,22 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "d" }))
 
--- Resize active window
-hl.bind(thirdMod .. " + h", hl.dsp.window.resize({ x = -40, y = 0, relative = true}), { repeating = true })
-hl.bind(thirdMod .. " + l", hl.dsp.window.resize({ x = 40, y = 0, relative = true}), { repeating = true })
-hl.bind(thirdMod .. " + j", hl.dsp.window.resize({ x = 0, y = -40, relative = true}), { repeating = true })
-hl.bind(thirdMod .. " + k", hl.dsp.window.resize({ x = 0, y = 40, relative = true}), { repeating = true })
-
 -- Move active window
 hl.bind(secondMod .. " + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(secondMod .. " + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(secondMod .. " + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(secondMod .. " + j", hl.dsp.window.move({ direction = "down" }))
 
--- Send active window to workspace
+-- Resize active window
+hl.bind(thirdMod .. " + h", hl.dsp.window.resize({ x = -40, y = 0, relative = true}), { repeating = true })
+hl.bind(thirdMod .. " + l", hl.dsp.window.resize({ x = 40, y = 0, relative = true}), { repeating = true })
+hl.bind(thirdMod .. " + j", hl.dsp.window.resize({ x = 0, y = -40, relative = true}), { repeating = true })
+hl.bind(thirdMod .. " + k", hl.dsp.window.resize({ x = 0, y = 40, relative = true}), { repeating = true })
+
+-- Workspace navigation & window routing (Workspaces 1-10)
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(secondMod .. " + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+    hl.bind(thirdMod .. " + " .. key, hl.dsp.window.move({ workspace = i, follow = true }))
 end
