@@ -5,7 +5,7 @@ ui_scale = 1.1500000096857548
 order = [ "default" ]
 
     [bar.default]
-    background_opacity = 0.97999997809529305
+    background_opacity = 0.99999997764825821
     capsule = true
     capsule_radius = 4
     center = [ "active_window" ]
@@ -19,10 +19,11 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g1"
-        members = [ "cpu", "temp", "ram", "sysmon" ]
+        members = [ "cpu", "temp", "ram", "sysmon", "widget", "button" ]
         opacity = 1.0
         padding = 6.0
         radius = 4.0
@@ -30,6 +31,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g2"
@@ -41,6 +43,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g3"
@@ -52,6 +55,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g4"
@@ -63,6 +67,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g5"
@@ -74,6 +79,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
         fill = "surface_variant"
         id = "g6"
@@ -200,18 +206,34 @@ position = "top_center"
 [osd.kinds]
 media = false
 
+[plugin_settings."alexander/screen-toolkit"]
+hide-cursor = false
+record-codec = "av1"
+
 [plugin_settings."h465855hgg/lyrics"]
 display_mode = "lyrics"
 double_line_auto_fit = false
 player_allowlist = [ "sidra", "Sidra" ]
 show_translation = false
 
+[plugin_settings."linux-fertxo/hyprland-visual-editor"]
+is_system_active = true
+
 [plugin_settings."tranzem/media-lyrics"]
 panel_size = "large"
 player_allowlist = "sidra"
 
+[plugin_settings."yuuto/arch-updater"]
+aur_helper = "yay"
+
 [plugins]
-enabled = [ "h465855hgg/lyrics", "tranzem/media-lyrics" ]
+enabled = [
+    "h465855hgg/lyrics",
+    "tranzem/media-lyrics",
+    "alexander/screen-toolkit",
+    "michael-retunzew/hyprland-settings",
+    "yuuto/arch-updater"
+]
 
 [shell]
 corner_radius_scale = 0.20000000298023224
@@ -220,6 +242,14 @@ screen_time_enabled = true
 
     [shell.panel]
     transparency_mode = "glass"
+
+    [shell.screenshot]
+    save_to_file = true
+    annotate = true
+    directory = "/home/maya/Pictures/Screenshots"
+    remember_last_region = true
+    show_cursor = true
+    copy_to_clipboard = true
 
 [theme]
 builtin = "Ayu"
@@ -230,7 +260,7 @@ wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
-    community_ids = [ "discord", "prismlauncher", "obs", "hyprtoolkit", "papirus-icons", "yazi" ]
+    community_ids = [ "sidra", "discord", "prismlauncher", "obs", "hyprtoolkit", "papirus-icons", "yazi" ]
 
 [wallpaper]
 directory = "/home/maya/.config/hypr/wallpapers"
@@ -266,6 +296,9 @@ mirrored = false
 
 [widget.bluetooth]
 enabled = false
+
+[widget.button]
+type = "michael-retunzew/hyprland-settings:button"
 
 [widget.clock]
 format = "{:%A, %B %d - %-I:%M %p}"
@@ -326,6 +359,9 @@ visualization = "none"
 drawer = true
 drawer_columns = 5
 match_adjacent_spacing = true
+
+[widget.widget]
+type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
 focused_output_only = true
