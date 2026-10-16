@@ -102,11 +102,26 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = [[^(harbor)$]] },
+    workspace = "6 silent",
+})
+
+hl.window_rule({
     match = { class = [[^(com.obsproject.Studio)$]] },
     workspace = "6 silent",
 })
 
 hl.window_rule({
     match = { class = [[(?i)gimp]] },
+    workspace = "6 silent",
+})
+
+hl.window_rule({
+    match = { class = [[(?i)^(ai\.elementlabs\.lmstudio|lm-?studio)$]] },
+    workspace = "6 silent",
+})
+
+hl.window_rule({
+    match = { class = [[(?i)^hermes$]] },
     workspace = "6 silent",
 })
