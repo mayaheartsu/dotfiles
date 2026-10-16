@@ -24,6 +24,7 @@ hl.window_rule({
     match = { class = "(nemo)$" }, 
     float = true,
     size =  {1600, 900},
+    no_initial_focus = true,
 })
 
 hl.window_rule({ 
