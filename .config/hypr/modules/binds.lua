@@ -76,12 +76,6 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "d" }))
 
--- Focus cycling: include floating windows (master layout excludes them by default)
-hl.bind(mainMod .. " + Tab", hl.dsp.layout("cyclenext")) -- Next window (tiled only in master)
-
--- Note: Floating windows are excluded from master layout's focus cycle by design.
--- Use mouse to activate floating windows, or see scripts/ directory for external tools.
-
 -- Move active window
 hl.bind(secondMod .. " + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(secondMod .. " + l", hl.dsp.window.move({ direction = "right" }))
