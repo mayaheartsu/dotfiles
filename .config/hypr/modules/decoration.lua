@@ -34,7 +34,7 @@ hl.config({
         dim_strength = .35,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 8,
             render_power = 3,
             color        = "0xffb4befe",
@@ -42,7 +42,7 @@ hl.config({
         },
 
         blur = {
-            enabled   = true,
+            enabled   = false,
             size      = 6,
             passes    = 2,
             vibrancy  = 0.1696,
