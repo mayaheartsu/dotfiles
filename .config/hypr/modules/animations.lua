@@ -7,15 +7,6 @@
                                                          
 
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-
-hl.config({
-    animations = {
-        enabled = true,
-    },
-}
-)
-
-
 -- Default curves and animations
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
@@ -47,7 +38,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 
 hl.config({
     animations = {
-        enabled = true,
+        enabled = false,
         bezier = {
             resizeEase = { 0.05, 0.9, 0.1, 1.05 },
         },
