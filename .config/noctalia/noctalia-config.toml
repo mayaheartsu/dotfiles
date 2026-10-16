@@ -620,6 +620,9 @@ umbriel_overview_type_to_launch_enabled = false
     enabled = false
     size = 32
 
+    [shell.screen_toolkit]
+    data_directory = "/home/maya/.local/share/noctalia"
+
     [shell.screenshot]
     annotate = true
     close_on_copy = true
