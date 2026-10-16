@@ -12,7 +12,9 @@ local terminal = "kitty"
 local browser = "helium-browser"
 local fileManager = "nemo"
 local fileManagerTerm = "kitty -e yazi"
-local screenshot = "hyprscreen"
+local lmStudio = "game-performance lm-studio"
+local discord = "discord" -- launched via workspaces.lua catchall: ^(vesktop|.*(disc|goofc|WebC|Armc|legc|Venc)ord.*)$ → ws2 silent
+local screenshot = "noctalia msg panel-toggle alexander/screen-toolkit:panel"
 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
@@ -25,9 +27,10 @@ hl.bind(mainMod .. "+ RETURN", hl.dsp.exec_cmd(terminal, {workspace = "1 silent"
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(fileManagerTerm))
+hl.bind(mainMod .. " + p", hl.dsp.exec_cmd(lmStudio, {workspace = "6 silent"}))
+hl.bind(mainMod .. " + n", hl.dsp.exec_cmd(discord, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
-hl.bind(secondMod .. "+ s", hl.dsp.exec_cmd(screenshot))
-hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd("noctalia msg panel-toggle alexander/screen-toolkit:panel"))
+hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
 
 
 -- Brightness
@@ -72,6 +75,12 @@ hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "l" }))
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "d" }))
+
+-- Focus cycling: include floating windows (master layout excludes them by default)
+hl.bind(mainMod .. " + Tab", hl.dsp.layout("cyclenext")) -- Next window (tiled only in master)
+
+-- Note: Floating windows are excluded from master layout's focus cycle by design.
+-- Use mouse to activate floating windows, or see scripts/ directory for external tools.
 
 -- Move active window
 hl.bind(secondMod .. " + h", hl.dsp.window.move({ direction = "left" }))
