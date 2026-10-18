@@ -544,7 +544,7 @@ setup_wizard_enabled = true
 shared_gl_context = true
 show_close_buttons = true
 show_location = true
-telemetry_enabled = false
+telemetry_enabled = true
 time_format = "{:%H:%M}"
 umbriel_overview_type_to_launch_enabled = false
 
