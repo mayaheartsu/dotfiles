@@ -658,8 +658,8 @@ umbriel_overview_type_to_launch_enabled = false
 
         [[shell.session.actions]]
         action = "logout"
-        command = ""
-        countdown_seconds = 0.0
+        command = "hyprctl dispatch exit"
+        countdown_seconds = 10.0
         enabled = true
         glyph = ""
         label = ""
@@ -977,3 +977,5 @@ type = "yuuto/arch-updater:widget"
 [widget.workspaces]
 focused_output_only = true
 type = "workspaces"
+enable_click = true
+enable_scroll = true
