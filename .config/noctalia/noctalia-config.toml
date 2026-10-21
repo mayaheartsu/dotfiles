@@ -72,7 +72,7 @@ order = [ "default" ]
         enabled = true
         fill = "surface_variant"
         id = "g1"
-        members = [ "cpu", "ram", "temp", "gpu_usage", "sysmon", "gpu_vram_gib", "gpu_vram", "gpu_temp" ]
+        members = [ "cpu", "ram", "temp", "gpu_usage", "sysmon", "gpu_vram", "gpu_temp" ]
         opacity = 1.0
         padding = 6.0
         radius = 4.0
@@ -465,15 +465,6 @@ scale = 1.0
 hide-cursor = false
 record-codec = "av1"
 
-[plugin_settings."h465855hgg/lyrics"]
-display_mode = "lyrics"
-double_line_auto_fit = false
-player_allowlist = [ "sidra", "Sidra" ]
-show_translation = false
-
-[plugin_settings."linux-fertxo/hyprland-visual-editor"]
-is_system_active = true
-
 [plugin_settings."tranzem/media-lyrics"]
 panel_size = "large"
 player_allowlist = "sidra"
@@ -497,18 +488,6 @@ enabled = [ "tranzem/media-lyrics", "alexander/screen-toolkit", "yuuto/arch-upda
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
-
-    [[plugins.source]]
-    enabled = true
-    kind = "local"
-    location = "/home/maya/.config/noctalia/plugins/gpu-vram-absolute"
-    name = "gpu-vram-absolute"
-
-    [[plugins.source]]
-    enabled = true
-    kind = "local"
-    location = "/home/maya/.config/noctalia/scripts/get_gpu_vram_gib.sh"
-    name = "gpu-vram-gib"
 
 [shell]
 app_icon_colorize = false
@@ -620,11 +599,8 @@ umbriel_overview_type_to_launch_enabled = false
     enabled = false
     size = 32
 
-    [shell.screen_toolkit]
-    data_directory = "/home/maya/.local/share/noctalia"
-
     [shell.screenshot]
-    annotate = true
+    annotate = false
     close_on_copy = true
     close_on_save = true
     confirm_region = false
@@ -637,7 +613,7 @@ umbriel_overview_type_to_launch_enabled = false
     remember_last_region = true
     save_to_file = true
     show_cursor = true
-    skip_annotate_on_copy_save = false
+    skip_annotate_on_copy_save = true
 
     [shell.session]
     grid = false
@@ -658,8 +634,8 @@ umbriel_overview_type_to_launch_enabled = false
 
         [[shell.session.actions]]
         action = "logout"
-        command = "hyprctl dispatch exit"
-        countdown_seconds = 10.0
+        command = "pkill -KILL -u $USER"
+        countdown_seconds = 0.0
         enabled = true
         glyph = ""
         label = ""
@@ -820,9 +796,6 @@ type = "audio_visualizer"
 enabled = false
 type = "bluetooth"
 
-[widget.button]
-type = "michael-retunzew/hyprland-settings:button"
-
 [widget.clock]
 format = "{:%A, %B %d - %-I:%M %p}"
 type = "clock"
@@ -855,13 +828,6 @@ stat = "gpu_vram"
 type = "sysmon"
 visualization = "none"
 
-[widget.gpu_vram_absolute]
-type = "gpu-vram-absolute:gpu-vram-absolute"
-
-[widget.gpu_vram_gib]
-enabled = false
-type = "shell:get_gpu_vram_gib.sh"
-
 [widget.input_volume]
 device = "input"
 type = "volume"
@@ -877,16 +843,6 @@ show_caps_lock = true
 show_num_lock = true
 show_scroll_lock = false
 type = "lock_keys"
-
-[widget.lyrics]
-enable_scroll = false
-enabled = false
-hide_when_no_lyrics = true
-hide_when_paused = true
-show_artist = false
-show_cover = false
-show_glyph = false
-type = "h465855hgg/lyrics:lyrics"
 
 [widget.media]
 art_size = 16.0
@@ -977,5 +933,3 @@ type = "yuuto/arch-updater:widget"
 [widget.workspaces]
 focused_output_only = true
 type = "workspaces"
-enable_click = true
-enable_scroll = true
