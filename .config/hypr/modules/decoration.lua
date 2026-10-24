@@ -43,12 +43,38 @@ hl.config({
 
         blur = {
             enabled   = false,
-            size      = 6,
-            passes    = 2,
-            vibrancy  = 0.1696,
+            --variant = "acrylic",
             brightness = 0.8172,
+            contrast = 0.8916,
             noise = 0.0117,
+            vibrancy  = 0.1696,
+            vibrancy_darkness = 0,
+            passes    = 2,
+            size      = 6,
             popups = false,
         },
+        
+        glow = {
+            enabled = false,
+            color = "0xee1a1a1a",
+            range = 10,
+            render_power = 3,
+        },
+
+        motion_blur = {
+            enabled = false,
+            samples = 7,
+        },
+
+        --wobble = {
+            --enabled = true,
+            --mesh = 12,
+            --stiffness = 200,
+            --damping = 12,
+            --mass = 1,
+            --intensity = 0.2,
+            --value_epsilon = 0.25,
+            --velocity_episilon = 2,
+        --},
     }}
 )
