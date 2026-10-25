@@ -7,7 +7,9 @@
 
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
 
-local menu = "hyprlauncher"
+--local menu = "hyprlauncher"
+local ipc = "noctalia msg "
+local menu = "noctalia msg panel-toggle launcher"
 local terminal = "kitty"
 local browser = "helium-browser"
 local fileManager = "nemo"
@@ -22,7 +24,7 @@ local secondMod = "SUPER + SHIFT"
 local thirdMod = "SUPER + CTRL"
 
 -- App binds
-hl.bind(mainMod .. "+ d", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. "+ d", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+ RETURN", hl.dsp.exec_cmd(terminal, {workspace = "1 silent"}))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
@@ -31,17 +33,26 @@ hl.bind(mainMod .. " + p", hl.dsp.exec_cmd(lmStudio, {workspace = "6 silent"}))
 hl.bind(mainMod .. " + n", hl.dsp.exec_cmd(discord, {workspace = "2 silent"}))
 hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
 hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
+hl.bind(secondMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
 
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
 -- Brightness
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+--hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
+--hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Volume
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"), { locked = true, repeating = true })
+--hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
+--hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
+--hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"), { locked = true, repeating = true })
+--hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"), { locked = true, repeating = true })
 
 -- Media Keys
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"), { locked = true })
