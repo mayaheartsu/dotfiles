@@ -30,7 +30,7 @@ hl.config({
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
         dim_modal = true,
-        --dim_inactive = true,
+        dim_inactive = false,
         dim_strength = .35,
 
         shadow = {
@@ -42,8 +42,8 @@ hl.config({
         },
 
         blur = {
-            enabled   = false,
-            --variant = "acrylic",
+            enabled   = true,
+            --variant = "kawase",
             brightness = 0.8172,
             contrast = 0.8916,
             noise = 0.0117,
@@ -62,7 +62,7 @@ hl.config({
         },
 
         motion_blur = {
-            enabled = false,
+            enabled = true,
             samples = 7,
         },
 
