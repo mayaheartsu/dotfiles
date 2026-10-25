@@ -38,7 +38,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 
 hl.config({
     animations = {
-        enabled = false,
+        enabled = true,
         bezier = {
             resizeEase = { 0.05, 0.9, 0.1, 1.05 },
         },
