@@ -122,6 +122,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = [[(?i)^hermes$]] },
+    match = { class = [[(?i)^hermes$]], namespace = "com.nousresearch.hermes" },
     workspace = "6 silent",
 })
