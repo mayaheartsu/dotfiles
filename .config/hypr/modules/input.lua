@@ -11,7 +11,7 @@
 
 hl.config({
     input = {
-        kb_layout  = "us",
+        kb_layout = "us",
         repeat_rate = 35,
         repeat_delay = 200,
         accel_profile = "flat",
