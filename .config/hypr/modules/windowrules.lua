@@ -59,6 +59,8 @@ hl.layer_rule({ match = { namespace = "hyprlauncher" }, animation="popin"})
 -- No Screenshare
 hl.window_rule({ match = { class = "^(Bitwarden)$" }, no_screen_share = true})
 hl.window_rule({ match = { class = "^(nemo)$" }, no_screen_share = true})
+hl.window_rule({ match = { class = [[(?i)^(ai\\.elementlabs\\.lmstudio|lm-?studio)$]] }, no_screen_share = true })
+hl.window_rule({ match = { namespace = "com.nousresearch.hermes" }, no_screen_share = true })
 hl.layer_rule({ match = { namespace = "notifications" }, no_screen_share = true,})
 
 local browserClass = "^([Ff]irefox)|helium$"
@@ -116,6 +118,8 @@ hl.window_rule({
     no_dim = true,
     no_max_size = true,
     no_shadow = true,
+    no_wobble = true,
+    no_glow = true,
     opacity = 1.0,
     opaque = true,
     persistent_size = true,
