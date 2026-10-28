@@ -9,7 +9,7 @@
 
 hl.config({
     general = {
-        gaps_in  = 5,
+        gaps_in = 5,
         gaps_out = 8,
 
         border_size = 1,
@@ -23,39 +23,51 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 5,
+        rounding = 5,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
+        active_opacity = 1.0,
         inactive_opacity = 1.0,
         dim_modal = true,
         dim_inactive = false,
         dim_strength = .35,
 
         shadow = {
-            enabled      = false,
-            range        = 8,
-            render_power = 3,
-            color        = "0xffb4befe",
+            enabled = true,
+            color = "0xffb4befe",
             color_inactive = "0x50000000",
+            offset = "0 0",
+            range = 8,
+            render_power = 3,
+            scale = 1.0,
+            sharp = false,
         },
 
         blur = {
-            enabled   = true,
-            --variant = "kawase",
+            enabled = true,
+            variant = "acrylic",
             brightness = 0.8172,
             contrast = 0.8916,
             noise = 0.0117,
-            vibrancy  = 0.1696,
+            vibrancy = 0.1696,
             vibrancy_darkness = 0,
-            passes    = 2,
-            size      = 6,
+            passes = 2,
+            size = 6,
             popups = false,
+
+            -- Blur variants listed underneath, the only one I really care to configure is acrylic
+                acrylic = {
+                    aberration = 0.25,
+                    bulb = 24.0,
+                    clarity = 0.82,
+                    refraction = 24.0,
+                    tint = 0x14EEF5FF,
+                },
         },
-        
+
         glow = {
-            enabled = false,
+            enabled = true,
             color = "0xee1a1a1a",
             range = 10,
             render_power = 3,
@@ -66,15 +78,15 @@ hl.config({
             samples = 7,
         },
 
-        --wobble = {
-            --enabled = true,
-            --mesh = 12,
-            --stiffness = 200,
-            --damping = 12,
-            --mass = 1,
-            --intensity = 0.2,
-            --value_epsilon = 0.25,
-            --velocity_episilon = 2,
-        --},
+        wobble = {
+            enabled = false,
+            mesh = 12,
+            stiffness = 200,
+            damping = 12,
+            mass = 1,
+            intensity = 0.2,
+            value_epsilon = 0.25,
+            velocity_epsilon = 2,
+        },
     }}
 )
