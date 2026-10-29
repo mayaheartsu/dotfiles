@@ -1,14 +1,15 @@
--- __          __        _                                  
--- \ \        / /       | |                                 
+-- __          __        _                                 
+-- \ \        / /       | |                                
 --  \ \  /\  / /__  _ __| | _____ _ __   __ _  ___ ___  ___ 
 --   \ \/  \/ / _ \| '__| |/ / __| '_ \ / _` |/ __/ _ \/ __|
---    \  /\  / (_) | |  |   <\__ \ |_) | (_| | (_|  __/\__ \
---     \/  \/ \___/|_|  |_|\_\___/ .__/ \__,_|\___\___||___/
---                               | |                        
---                               |_|                        
+--    \  /\  / (_) | |  |   <\__ \ |_) | (_| | (_|  __/\__ \ 
+--     \/  \/ \___/|_|  |_|\_\\___/ .__/ \__,_|\___\___||___/
+--                                | |                      
+--                                |_|                      
 
 -- https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
+-- Monitor workspace assignments (1-6)
 hl.workspace_rule({
     workspace = "1",
     monitor = "DP-2",
@@ -43,9 +44,7 @@ hl.workspace_rule({
     monitor = "DP-1",
 })
 
-
 -- App workspace assignments
-
 hl.window_rule({
     match = { class = [[^(kitty|foot)$]] },
     workspace = "1 silent",
@@ -117,7 +116,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = [[(?i)^(ai\.elementlabs\.lmstudio|lm-?studio)$]] },
+    match = { class = [[(?i)^(ai\\.elementlabs\\.lmstudio|lm-?studio)$]] },
     workspace = "6 silent",
 })
 
