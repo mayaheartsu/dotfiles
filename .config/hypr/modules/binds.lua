@@ -7,8 +7,8 @@
 
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
 
---local menu = "hyprlauncher"
 local ipc = "noctalia msg "
+--local menu = "hyprlauncher"
 local menu = "noctalia msg panel-toggle launcher"
 local terminal = "kitty"
 local browser = "helium-browser"
@@ -17,8 +17,6 @@ local fileManagerTerm = "kitty -e yazi"
 local lmStudio = "game-performance lm-studio"
 local discord = "discord" -- launched via workspaces.lua catchall: ^(vesktop|.*(disc|goofc|WebC|Armc|legc|Venc)ord.*)$ → ws2 silent
 local screenshot = "noctalia msg panel-toggle alexander/screen-toolkit:panel"
-
-
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local secondMod = "SUPER + SHIFT"
 local thirdMod = "SUPER + CTRL"
@@ -31,24 +29,25 @@ hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(fileManagerTerm))
 hl.bind(mainMod .. " + p", hl.dsp.exec_cmd(lmStudio, {workspace = "6 silent"}))
 hl.bind(mainMod .. " + n", hl.dsp.exec_cmd(discord, {workspace = "2 silent"}))
+hl.bind(mainMod .. " + m", hl.dsp.exec_cmd("steam", {workspace = "4 silent"}))
 hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
 hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
 hl.bind(secondMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
 
-
+-- Volume (Noctalia binds)
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
--- Brightness
+-- Brightness (Hyprland binds)
 --hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 --hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
--- Volume
+-- Volume (Hyprland binds)
 --hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 --hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 --hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"), { locked = true, repeating = true })
@@ -67,7 +66,6 @@ hl.bind(mainMod .. " + t", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.layout("swapwithmaster master"))
 
 -- Maximize
---hl.bind(mainMod .. " + f", hl.dsp.window.fullscreen({ action = "toggle"}))
 hl.bind(mainMod .. " + f", hl.dsp.window.fullscreen({ action = "toggle", mode = 1 }))
 
 -- Fullscreen
@@ -102,7 +100,7 @@ hl.bind(thirdMod .. " + k", hl.dsp.window.resize({ x = 0, y = 40, relative = tru
 -- Workspace navigation & window routing (Workspaces 1-10)
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(secondMod .. " + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
-    hl.bind(thirdMod .. " + " .. key, hl.dsp.window.move({ workspace = i, follow = true }))
+    hl.bind(mainMod .. "+ " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(secondMod .. "+ " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+    hl.bind(thirdMod .. "+ " .. key, hl.dsp.window.move({ workspace = i, follow = true }))
 end
