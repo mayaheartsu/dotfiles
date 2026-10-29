@@ -19,6 +19,7 @@ hl.window_rule({ match = { class = "^(geeqie)$" }, float = true})
 hl.window_rule({ match = { class = "^(mpv)$" }, float = true})
 hl.window_rule({ match = { class = "^(file-roller)$" }, float = true})
 hl.window_rule({ match = { class = "^(hyprpolkitagent)$" }, float = true})
+
 hl.window_rule({ 
     name = "file manager",
     match = { class = "(nemo)$" }, 
@@ -42,6 +43,7 @@ hl.window_rule({
     size = { 1280, 920 },
 })
 
+-- Layer rules (overlays)
 hl.layer_rule({
   name = "noctalia",
   match = {
@@ -130,7 +132,7 @@ hl.window_rule({
     --sync_fullscreen= true, -- REMOVED: -- Caused forced client state desyncs
 })
 
--- Steam client window tile, friends list + settings + news float 
+-- Tile Main Steam Client, Float friends list + settings + news 
 hl.window_rule({ match = { class = [[^(steam)$]] }, float = true })
 hl.window_rule({ match = { class = [[^(steam)$]], title = [[(Steam)$]] }, tile = true })
 hl.window_rule({ match = { title = [[^(Friends List)$]] }, size = { 280, 800 } })
@@ -175,4 +177,28 @@ hl.window_rule({
     max_size = "1 1",
     no_blur = true,
     no_focus = true
+})
+
+-- Global overrides
+hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+
+hl.window_rule({
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
 })
