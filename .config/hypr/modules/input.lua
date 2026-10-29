@@ -5,13 +5,15 @@
 --  _| |_| | | | |_) | |_| | |_ 
 -- |_____|_| |_| .__/ \__,_|\__|
 --             | |              
---             |_|                                       
+--             |_|
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#input
 
+-- Input config (keyboard, mouse, touchpad)
+
 hl.config({
     input = {
-        kb_layout = "us",
+        kb_layout  = "us",
         repeat_rate = 35,
         repeat_delay = 200,
         accel_profile = "flat",
@@ -25,15 +27,19 @@ hl.config({
             middle_button_emulation = false,
             tap_to_click = true,
         },
-    },
+    }
 })
+
+-- Cursor
 
 hl.config({
     cursor = {
-	    no_hardware_cursors = 0,
-	    use_cpu_buffer = 0,
-    },
+        no_hardware_cursors = 0,
+        use_cpu_buffer = 0,
+    }
 })
+
+-- Gestures
 
 hl.gesture({
     fingers = 3,
