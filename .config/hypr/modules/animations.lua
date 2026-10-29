@@ -2,11 +2,11 @@
 --     /\         (_)               | | (_)                
 --    /  \   _ __  _ _ __ ___   __ _| |_ _  ___  _ __  ___ 
 --   / /\ \ | '_ \| | '_ ` _ \ / _` | __| |/ _ \| '_ \/ __|
---  / ____ \| | | | | | | | | | (_| | |_| | (_) | | | \__ \
+--  / ____ \| | | | | | | | | | (_| | |_| | (_) | | | \__ \ 
 -- /_/    \_\_| |_|_|_| |_| |_|\__,_|\__|_|\___/|_| |_|___/
-                                                         
 
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+
 -- Default curves and animations
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
@@ -18,6 +18,7 @@ hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1} 
 -- Stock 0.56 spring is waaay too slow! credit to https://github.com/hyprwm/Hyprland/discussions/15495#discussioncomment-17704224 for faster one
 -- hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 878.5, dampening = 59.29 })
+-- Animation leaves
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
@@ -36,6 +37,7 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
+
 hl.config({
     animations = {
         enabled = true,
@@ -53,5 +55,5 @@ hl.config({
     misc = {
         animate_manual_resizes = true,
         animate_mouse_windowdragging = true,
-    },
+    }
 })
