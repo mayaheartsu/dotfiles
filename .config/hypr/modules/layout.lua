@@ -23,7 +23,7 @@ hl.config({
         smart_split                  = false,
         smart_resizing               = true,
         permanent_direction_override = false,
-        special_scale_factor         = 1,
+        --special_scale_factor         = 1,
         split_width_multiplier       = 1.0,
         use_active_for_splits        = true,
         default_split_ratio          = 1.0,
@@ -36,7 +36,7 @@ hl.config({
 hl.config({
     master = {
         allow_small_split            = false,
-        special_scale_factor         = "1",
+        --special_scale_factor         = "1",
         mfact                        = 0.60,
         new_status                   = "slave",
         new_on_top                   = true,
