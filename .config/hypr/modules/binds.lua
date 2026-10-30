@@ -1,6 +1,6 @@
---  ____  _           _     
--- |  _ \(_)         | |    
--- | |_) |_ _ __   __| |___ 
+--  ____  _           _
+-- |  _ \(_)         | |
+-- | |_) |_ _ __   __| |___
 -- |  _ <| | '_ \ / _` / __|
 -- | |_) | | | | | (_| \__ \
 -- |____/|_|_| |_|\__,_|___/
@@ -22,18 +22,19 @@ local secondMod = "SUPER + SHIFT"
 local thirdMod = "SUPER + CTRL"
 
 -- App binds
-hl.bind(mainMod .. "+ d", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. "+ RETURN", hl.dsp.exec_cmd(terminal, {workspace = "1 silent"}))
-hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser, {workspace = "2 silent"}))
+hl.bind(mainMod .. " + d", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + e", hl.dsp.exec_cmd(fileManagerTerm))
-hl.bind(mainMod .. " + p", hl.dsp.exec_cmd(lmStudio, {workspace = "6 silent"}))
-hl.bind(mainMod .. " + n", hl.dsp.exec_cmd(discord, {workspace = "2 silent"}))
-hl.bind(mainMod .. " + m", hl.dsp.exec_cmd("steam", {workspace = "4 silent"}))
+hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("hermes-desktop"))
+hl.bind(mainMod .. " + p", hl.dsp.exec_cmd(lmStudio))
+hl.bind(mainMod .. " + n", hl.dsp.exec_cmd("discord"))
+hl.bind(mainMod .. " + m", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " --class clipse -e clipse"))
-hl.bind(mainMod .. "+ s", hl.dsp.exec_cmd(screenshot))
-hl.bind(secondMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind(mainMod .. " + s", hl.dsp.exec_cmd(screenshot))
+hl.bind(secondMod .. " + S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
 
 -- Volume (Noctalia binds)
@@ -71,7 +72,7 @@ hl.bind(mainMod .. " + f", hl.dsp.window.fullscreen({ action = "toggle", mode = 
 -- Fullscreen
 hl.bind(secondMod .. " + f", hl.dsp.window.fullscreen({ action = "toggle", mode = 0 }))
 
--- Fullscreen & Maximize 
+-- Fullscreen & Maximize
 hl.bind(thirdMod .. " + f", hl.dsp.window.fullscreen({ action = "toggle", set = 2 }))
 
 
