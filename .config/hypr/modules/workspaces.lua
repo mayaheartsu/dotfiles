@@ -116,11 +116,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = [[(?i)^(ai\\.elementlabs\\.lmstudio|lm-?studio)$]] },
+    match = { class = [[^(ai.elementlabs.lmstudio)$]] },
     workspace = "6 silent",
 })
 
 hl.window_rule({
-    match = { class = [[(?i)^hermes$]], namespace = "com.nousresearch.hermes" },
+    match = { class = [[(?i)^com.nousresearch.hermes$]]},
     workspace = "6 silent",
 })
