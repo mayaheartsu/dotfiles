@@ -54,7 +54,7 @@ hl.config({
             vibrancy_darkness = 0,
             passes = 2,
             size = 6,
-            popups = false,
+            popups = true,
 
             -- Blur variants listed underneath, the only one I really care to configure is acrylic
                 acrylic = {
